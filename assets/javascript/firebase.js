@@ -1,11 +1,11 @@
  // Initialize Firebase
  var config = {
-    apiKey: "AIzaSyCGWXtV1evsrrAma7utgdvA7uaVbzKfjvo",
-    authDomain: "ticketfinderproject.firebaseapp.com",
-    databaseURL: "https://ticketfinderproject.firebaseio.com",
-    projectId: "ticketfinderproject",
-    storageBucket: "ticketfinderproject.appspot.com",
-    messagingSenderId: "503769629669"
+    apiKey: "AIzaSyBNQUvYiOzVHVjtL9aak0CbXikadKrHjEg",
+    authDomain: "testing-d97fd.firebaseapp.com",
+    databaseURL: "https://testing-d97fd.firebaseio.com",
+    projectId: "testing-d97fd",
+    storageBucket: "",
+    messagingSenderId: "710007746680"
   };
   firebase.initializeApp(config);
 
