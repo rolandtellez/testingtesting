@@ -2,16 +2,7 @@ $(document).ready(function () {
 
     var apikey = "&apikey=uBAJZ1xFbGFg9COL6Nukmnihg3I4Akl8";
     var rootURL = "https://app.ticketmaster.com/discovery/v2/";
-    var parameter = "events.json?";
-    
-function getUser() {
-    localStorage.getItem(userProfile);
-    if (userProfile === null) {
-        console.log("no user")}
-        else {
-            $("#sign-in-btn").text(displayName);
-        }};
-                
+    var parameter = "events.json?";         
 
     $("#search-button").on("click", function (event) {
 
@@ -90,6 +81,13 @@ function getUser() {
     })
     
     $("#sign-in-btn").on("click", function () {
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(function() {
+        console.log("successfully set the persistence");
+        })
+        .catch(function(error){
+        console.log("failed to set persistence: " + error.message)
+        });
         var provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('https://www.googleapis.com/auth/calendar');
         firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -107,7 +105,6 @@ function getUser() {
 
             //pushes user profile to database
             database.ref().push(userProfile);
-            localStorage.setItem(userProfile);
 
         }).catch(function (error) {
 
@@ -130,14 +127,14 @@ function getUser() {
 
 
     });
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(function() {
-            console.log("successfully set the persistence");
 
-            })
-            .catch(function(error){
-            console.log("failed to set persistence: " + error.message)
-        });
+    var user = firebase.auth().currentUser;
+    var name, email;
+
+    if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    $("#sign-in-btn").text(displayName);
+    };
             
-     getUser();
 })
