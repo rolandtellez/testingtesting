@@ -129,7 +129,7 @@ $(document).ready(function () {
     });
 
 
-    var user = firebase.auth().userProfile;
+    // var user = firebase.auth().userProfile;
     // var name, email;
 
     // if (user != null) {
