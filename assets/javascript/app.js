@@ -81,11 +81,9 @@ $(document).ready(function () {
     })
 
     $("#sign-in-btn").on("click", function () {
-        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-        .then(function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('https://www.googleapis.com/auth/calendar');
-        return firebase.auth().signInWithPopup(provider);
+        firebase.auth().signInWithPopup(provider).then(function (result) {
 
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
@@ -118,6 +116,7 @@ $(document).ready(function () {
             console.log(credential);
 
         });
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
 
 
     })
