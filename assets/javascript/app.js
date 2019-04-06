@@ -116,7 +116,7 @@ $(document).ready(function () {
             console.log(credential);
 
         });
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
             .then(function() {
             console.log("successfully set the persistence");
 
