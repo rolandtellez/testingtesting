@@ -3,6 +3,15 @@ $(document).ready(function () {
     var apikey = "&apikey=uBAJZ1xFbGFg9COL6Nukmnihg3I4Akl8";
     var rootURL = "https://app.ticketmaster.com/discovery/v2/";
     var parameter = "events.json?";
+    
+    function getUser() {
+        localStorage.getItem(userProfile);
+        if (userProfile === null) {
+            console.log("no user");
+            else {
+                $("#sign-in-btn").text(displayName);
+            }
+                
 
     $("#search-button").on("click", function (event) {
 
@@ -129,4 +138,6 @@ $(document).ready(function () {
             .catch(function(error){
             console.log("failed to set persistence: " + error.message)
         });
+            
+     getUser();
 })
