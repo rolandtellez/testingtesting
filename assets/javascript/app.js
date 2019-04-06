@@ -79,7 +79,7 @@ $(document).ready(function () {
             }
         })
     })
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+    
     $("#sign-in-btn").on("click", function () {
         var provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('https://www.googleapis.com/auth/calendar');
@@ -116,8 +116,8 @@ $(document).ready(function () {
             console.log(credential);
 
         });
-        
 
 
-    })
+    });
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
 })
