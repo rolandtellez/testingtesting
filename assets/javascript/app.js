@@ -98,6 +98,7 @@ $(document).ready(function () {
 
             //pushes user profile to database
             database.ref().push(userProfile);
+            localStorage.setItem(userProfile);
 
         }).catch(function (error) {
 
@@ -120,7 +121,7 @@ $(document).ready(function () {
 
 
     });
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(function() {
             console.log("successfully set the persistence");
 
