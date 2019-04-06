@@ -131,6 +131,7 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     console.log("user signed in");
+    $("#sign-in-btn").text(displayName);
     } else {
     console.log("no user signed in");
     }
