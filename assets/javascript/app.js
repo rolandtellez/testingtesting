@@ -128,7 +128,7 @@ $(document).ready(function () {
 
     });
 
-    var user = firebase.auth().currentUser;
+    var user = firebase.auth().userProfile;
     var name, email;
 
     if (user != null) {
