@@ -116,8 +116,16 @@ $(document).ready(function () {
             console.log(credential);
 
         });
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(function() {
+            console.log("successfully set the persistence");
+
+            })
+            .catch(function(error){
+            console.log("failed to ser persistence: " + error.message)
+        });
 
 
     });
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+   
 })
