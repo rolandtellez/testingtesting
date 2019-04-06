@@ -130,13 +130,13 @@ $(document).ready(function () {
 
 
     var user = firebase.auth().userProfile;
-    var name, email;
+    // var name, email;
 
-    if (user != null) {
-    name = user.displayName;
-    email = user.email;
-    $("#sign-in-btn").text(displayName);
-    };
+    // if (user != null) {
+    // name = user.displayName;
+    // email = user.email;
+    // $("#sign-in-btn").text(displayName);
+    // };
     
         
     firebase.auth().onAuthStateChanged(function(user) {
