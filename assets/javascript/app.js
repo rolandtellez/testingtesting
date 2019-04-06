@@ -4,13 +4,13 @@ $(document).ready(function () {
     var rootURL = "https://app.ticketmaster.com/discovery/v2/";
     var parameter = "events.json?";
     
-    function getUser() {
-        localStorage.getItem(userProfile);
-        if (userProfile === null) {
-            console.log("no user");
-            else {
-                $("#sign-in-btn").text(displayName);
-            }
+function getUser() {
+    localStorage.getItem(userProfile);
+    if (userProfile === null) {
+        console.log("no user")}
+        else {
+            $("#sign-in-btn").text(displayName);
+        }};
                 
 
     $("#search-button").on("click", function (event) {
