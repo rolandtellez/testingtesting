@@ -127,6 +127,14 @@ $(document).ready(function () {
 
 
     });
+    
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    console.log("user signed in");
+    } else {
+    console.log("no user signed in");
+    }
+    });
 
     var user = firebase.auth().userProfile;
     var name, email;
