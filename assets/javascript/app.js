@@ -11,7 +11,7 @@ $(document).ready(function () {
         var city = $("#city-input").val();
         var date = $("#date-input").val()
 
-        var queryURL = rootURL + parameter + "city=" + city + "&startDateTime=" + date + "T00:00:00Z&endDateTime=" + date + "T23:59:00Z" + apikey;
+        var queryURL = rootURL + parameter + "city=" + city + "&startDateTime=" + date + "T00:01:00Z&endDateTime=" + date + "T23:59:00Z" + apikey;
 
         console.log(queryURL);
 
