@@ -11,9 +11,7 @@ $(document).ready(function () {
         var city = $("#city-input").val();
         var date = $("#date-input").val()
 
-        // var queryURL = rootURL + parameter + "city=" + city + "&startDateTime=" + date + "T00:01:00Z&endDateTime=" + date + "T23:59:00Z" + apikey;
-        var queryURL = rootURL + parameter + "city=" + city + "&startDateTime=" + date + "T00:00:00Z&endDateTime=" + apikey;
-
+        var queryURL = rootURL + parameter + "city=" + city + "&startDateTime=" + date + "T00:01:00Z&endDateTime=" + date + "T23:59:00Z" + apikey;
         
         console.log(queryURL);
 
@@ -30,7 +28,7 @@ $(document).ready(function () {
 
                     var eventName = (result[i].name); //event name
                     var eventType = (result[i].classifications[0].segment.name); //event type
-                    var eventDate = (result[i].dates.start.localDate); // date
+                    var eventDate = (result[i].dates.start.dateTime); // date
                     var eventImage = (result[i].images[9].url); //image pull
                     var ticketLink = (result[i].url); // ticket link
                     var eventVenue = (result[i]._embedded.venues[0].name); // venue
